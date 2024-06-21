@@ -1,7 +1,9 @@
+import 'package:injectable/injectable.dart';
 import 'package:slash_task/domain/entities/recommended_for_you_entity.dart';
 import 'package:slash_task/domain/repository_contract/recommended_for_you_repo.dart';
 import '../models/recommended_for_you_model.dart';
 
+@Injectable(as: RecommendedForYouRepo)
 class RecommendedForYouRepoImpl extends RecommendedForYouRepo{
   List<RecommendedForYouModel> recommendedForYouModel = [
     RecommendedForYouModel(price: 27.99,image: "assets/images/recommended_1.png",id: 1,name: "Recommended 1"),

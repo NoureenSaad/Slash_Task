@@ -1,16 +1,15 @@
-# slash_task
+# Slash Flutter Task
 
-A new Flutter project.
+Prerequisites:
+Flutter SDK: Install Flutter and add it to your PATH. Ensure you're using Flutter SDK version >=3.3.3 <4.0.0.
 
-## Getting Started
+Setup:
+1- Clone the Repository
+2- Install Dependencies => flutter pub get
+3- Create a New Flutter Project (if not cloning an existing project)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Running the Project:
+1- Start an Emulator
+(For Android: Open Android Studio > AVD Manager > Start an emulator)
+(For iOS: Open Xcode > Preferences > Components > Start a simulator)
+2- Run the Project => flutter run

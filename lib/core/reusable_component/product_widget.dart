@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:slash_task/core/utils/colors_manager.dart';
 
 class ProductWidget extends StatefulWidget {
@@ -35,7 +33,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Column(
@@ -51,7 +49,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                   children: [
                     Text("EGP ${widget.price ?? ""}",
                         style: Theme.of(context).textTheme.labelSmall),
-                    Icon(Icons.add_circle_outlined,
+                    const Icon(Icons.add_circle_outlined,
                         color: ColorsManager.textColor),
                   ],
                 ),
@@ -65,8 +63,8 @@ class _ProductWidgetState extends State<ProductWidget> {
             Container(
               height: 26,
               width: 26,
-              decoration: BoxDecoration(
-                  color: Color(0xffeeeeee), shape: BoxShape.circle),
+              decoration: const BoxDecoration(
+                  color: Colors.white, shape: BoxShape.circle),
             ),
             IconButton(
                 onPressed: () {

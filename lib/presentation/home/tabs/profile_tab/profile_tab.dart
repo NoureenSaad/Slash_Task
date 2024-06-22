@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slash_task/core/utils/colors_manager.dart';
+import 'package:slash_task/core/utils/strings_manager.dart';
 
 class ProfileTab extends StatelessWidget {
   const ProfileTab({super.key});
@@ -8,8 +9,8 @@ class ProfileTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Slash.")),
-      body: Center(
+        title: const Text(StringsManager.titleName)),
+      body: const Center(
         child: Icon(Icons.account_circle_outlined,color: ColorsManager.searchIconColor,),
       ),
     );

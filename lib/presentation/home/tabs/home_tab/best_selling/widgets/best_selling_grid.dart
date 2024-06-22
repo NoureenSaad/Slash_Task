@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_task/core/di/di.dart';
 import 'package:slash_task/core/reusable_component/product_widget.dart';
+import 'package:slash_task/core/utils/strings_manager.dart';
 import '../view_model/best_selling_cubit.dart';
 
 class BestSellingGrid extends StatelessWidget {
@@ -12,8 +13,8 @@ class BestSellingGrid extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Best Selling",style: Theme.of(context).textTheme.headlineLarge,),
-        SizedBox(height: 10,),
+        Text(StringsManager.bestSellingTitle,style: Theme.of(context).textTheme.headlineLarge,),
+        const SizedBox(height: 10,),
         BlocProvider(
           create: (context)=>getIt<BestSellingCubit>()..getBestSelling(),
           child: BlocBuilder<BestSellingCubit,BestSellingState>(
@@ -21,7 +22,7 @@ class BestSellingGrid extends StatelessWidget {
               if(state is BestSellingSuccess){
                 return Expanded(
                     child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 10,crossAxisSpacing: 5),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 10,crossAxisSpacing: 5),
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context,index){
                           return ProductWidget(price: state.bestSelling[index].price,name: state.bestSelling[index].name,imagePath: state.bestSelling[index].image,);
@@ -31,7 +32,7 @@ class BestSellingGrid extends StatelessWidget {
                 );
               }
               else{
-                return Center(child: CircularProgressIndicator.adaptive(),);
+                return const Center(child: CircularProgressIndicator.adaptive(),);
               }
             },
           ),

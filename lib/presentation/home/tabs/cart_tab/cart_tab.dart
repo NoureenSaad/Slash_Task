@@ -10,7 +10,7 @@ class CartTab extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: Text("Slash.")),
-      body: Center(
+      body: const Center(
         child: Icon(Icons.shopping_cart_outlined,color: ColorsManager.searchIconColor,),
       ),
     );

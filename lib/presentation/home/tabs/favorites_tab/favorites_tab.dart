@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:slash_task/core/utils/strings_manager.dart';
 import '../../../../core/utils/colors_manager.dart';
 
 class FavoritesTab extends StatelessWidget {
@@ -9,8 +9,8 @@ class FavoritesTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("Slash.")),
-      body: Center(
+          title: const Text(StringsManager.titleName)),
+      body: const Center(
         child: Icon(Icons.favorite_border,color: ColorsManager.searchIconColor,),
       ),
     );

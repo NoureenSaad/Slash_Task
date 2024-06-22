@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:slash_task/core/utils/colors_manager.dart';
+import 'package:slash_task/core/utils/strings_manager.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/best_selling/widgets/best_selling_grid.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/categories/categories_grid.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/recommended/widgets/recommended_grid.dart';
@@ -19,9 +20,10 @@ class _WebLayoutState extends State<WebLayout> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Slash."),
+        title: const Text(StringsManager.titleName),
         actions: [
           Row(
             children: [
@@ -39,7 +41,7 @@ class _WebLayoutState extends State<WebLayout> {
                       const Icon(Icons.search_outlined,
                           size: 20, color: ColorsManager.searchIconColor),
                       Text(
-                        "Search here..",
+                        StringsManager.searchTitle,
                         style: Theme.of(context).textTheme.headlineSmall,
                       )
                     ],
@@ -89,28 +91,28 @@ class _WebLayoutState extends State<WebLayout> {
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
                         "assets/images/ad.png",
-                        width: 600,
+                        width: width>1100?750:600,
                         fit: BoxFit.cover,
                       )),
                   ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
                         "assets/images/ad.png",
-                        width: 600,
+                        width: width>1100?750:600,
                         fit: BoxFit.cover,
                       )),
                   ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
                         "assets/images/ad.png",
-                        width: 600,
+                        width: width>1100?750:600,
                         fit: BoxFit.cover,
                       )),
                 ],
                 options: CarouselOptions(
                   viewportFraction: 0.8,
                   enlargeCenterPage: true,
-                  height: 250,
+                  height: width>1100?350:250,
                   enableInfiniteScroll: false,
                   onPageChanged: (index, reason) {
                     setState(() {
@@ -145,32 +147,32 @@ class _WebLayoutState extends State<WebLayout> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(height: 300, child: CategoriesGrid()),
+                    child: SizedBox(height: width>1100?400:300, child: CategoriesGrid()),
                   ),
                 ),
-                const Expanded(
+                Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: SizedBox(height: 300, child: BestSellingGrid()),
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(height: width>1100?400:300, child: const BestSellingGrid()),
                   ),
                 ),
               ],
             ),
           ),
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: SizedBox(height: 300, child: NewArrivalGrid()),
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(height: width>1100?400:300, child: const NewArrivalGrid()),
                   ),
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: SizedBox(height: 300, child: RecommendedGrid()),
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(height: width>1100?400:300, child: const RecommendedGrid()),
                   ),
                 )
               ],

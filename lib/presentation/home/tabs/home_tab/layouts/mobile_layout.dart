@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:slash_task/core/utils/colors_manager.dart';
+import 'package:slash_task/core/utils/strings_manager.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/best_selling/widgets/best_selling_list.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/categories/categories_list.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/new_arrival/widgets/new_arrival_list.dart';
@@ -21,7 +22,7 @@ class _MobileLayoutState extends State<MobileLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Slash."),
+        title: const Text(StringsManager.titleName),
         actions: [
           SvgPicture.asset("assets/icons/Location.svg"),
           SizedBox(
@@ -50,7 +51,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                       Icon(Icons.search_outlined,
                           size: 20, color: ColorsManager.searchIconColor),
                       Text(
-                        "Search here..",
+                        StringsManager.searchTitle,
                         style: Theme.of(context).textTheme.headlineSmall,
                       )
                     ],
@@ -109,7 +110,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                 options: CarouselOptions(
                   viewportFraction: 0.8,
                   enlargeCenterPage: true,
-                  height: 180,
+                  height: 200,
                   enableInfiniteScroll: false,
                   onPageChanged: (index, reason) {
                     setState(() {
@@ -124,8 +125,8 @@ class _MobileLayoutState extends State<MobileLayout> {
                   return Container(
                     width: 8,
                     height: 8,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 2.0),
+                    margin:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: currentIndex == index
@@ -139,26 +140,26 @@ class _MobileLayoutState extends State<MobileLayout> {
           )),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(height: 150, child: CategoriesList()),
+              padding: EdgeInsets.all(8.0),
+              child: SizedBox(height: 150, child: CategoriesList()),
             ),
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(height: 210, child: BestSellingList()),
+              padding: EdgeInsets.all(8.0),
+              child: SizedBox(height: 210, child: BestSellingList()),
             ),
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(height: 210, child: NewArrivalList()),
+              padding: EdgeInsets.all(8.0),
+              child: SizedBox(height: 210, child: NewArrivalList()),
             ),
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(height: 210, child: RecommendedList()),
+              padding: EdgeInsets.all(8.0),
+              child: SizedBox(height: 210, child: RecommendedList()),
             ),
           )
         ],

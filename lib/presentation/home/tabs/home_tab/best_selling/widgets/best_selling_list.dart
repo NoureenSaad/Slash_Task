@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_task/core/di/di.dart';
 import 'package:slash_task/core/reusable_component/product_widget.dart';
+import 'package:slash_task/core/utils/strings_manager.dart';
 import '../view_model/best_selling_cubit.dart';
 
 class BestSellingList extends StatelessWidget {
@@ -12,8 +13,8 @@ class BestSellingList extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Best Selling",style: Theme.of(context).textTheme.headlineLarge,),
-        SizedBox(height: 10,),
+        Text(StringsManager.bestSellingTitle,style: Theme.of(context).textTheme.headlineLarge,),
+        const SizedBox(height: 10,),
         BlocProvider(
           create: (context)=>getIt<BestSellingCubit>()..getBestSelling(),
           child: BlocBuilder<BestSellingCubit,BestSellingState>(
@@ -25,13 +26,13 @@ class BestSellingList extends StatelessWidget {
                         itemBuilder: (context,index){
                           return ProductWidget(price: state.bestSelling[index].price,name: state.bestSelling[index].name,imagePath: state.bestSelling[index].image,);
                         },
-                        separatorBuilder: (context,index)=>SizedBox(width: 5,),
+                        separatorBuilder: (context,index)=>const SizedBox(width: 5,),
                         itemCount: state.bestSelling.length
                     )
                 );
               }
               else{
-                return Center(child: CircularProgressIndicator.adaptive(),);
+                return const Center(child: CircularProgressIndicator.adaptive(),);
               }
             },
           ),

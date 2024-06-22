@@ -146,13 +146,13 @@ class _WebLayoutState extends State<WebLayout> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(14.0),
                     child: SizedBox(height: width>1100?400:300, child: CategoriesGrid()),
                   ),
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(14.0),
                     child: SizedBox(height: width>1100?400:300, child: const BestSellingGrid()),
                   ),
                 ),
@@ -165,13 +165,13 @@ class _WebLayoutState extends State<WebLayout> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(14.0),
                     child: SizedBox(height: width>1100?400:300, child: const NewArrivalGrid()),
                   ),
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(14.0),
                     child: SizedBox(height: width>1100?400:300, child: const RecommendedGrid()),
                   ),
                 )

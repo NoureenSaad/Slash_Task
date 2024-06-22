@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_task/core/di/di.dart';
 import 'package:slash_task/core/reusable_component/product_widget.dart';
 import 'package:slash_task/core/utils/strings_manager.dart';
+import '../../../../../../core/reusable_component/see_more_widget.dart';
 import '../view_model/best_selling_cubit.dart';
 
 class BestSellingGrid extends StatelessWidget {
@@ -13,7 +14,13 @@ class BestSellingGrid extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(StringsManager.bestSellingTitle,style: Theme.of(context).textTheme.headlineLarge,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(StringsManager.bestSellingTitle,style: Theme.of(context).textTheme.headlineLarge,),
+            const SeeMoreWidget()
+          ],
+        ),
         const SizedBox(height: 10,),
         BlocProvider(
           create: (context)=>getIt<BestSellingCubit>()..getBestSelling(),

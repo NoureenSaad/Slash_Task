@@ -25,7 +25,7 @@ class _MobileLayoutState extends State<MobileLayout> {
         title: const Text(StringsManager.titleName),
         actions: [
           SvgPicture.asset("assets/icons/Location.svg"),
-          SizedBox(
+          const SizedBox(
             width: 30,
           ),
           SvgPicture.asset("assets/icons/Notifcation_Icon.svg"),
@@ -45,10 +45,10 @@ class _MobileLayoutState extends State<MobileLayout> {
                   color: ColorsManager.searchBarColor,
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   child: Row(
                     children: [
-                      Icon(Icons.search_outlined,
+                      const Icon(Icons.search_outlined,
                           size: 20, color: ColorsManager.searchIconColor),
                       Text(
                         StringsManager.searchTitle,
@@ -58,7 +58,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Container(
@@ -68,14 +68,14 @@ class _MobileLayoutState extends State<MobileLayout> {
                     borderRadius: BorderRadius.circular(8),
                     color: ColorsManager.searchBarColor,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.format_list_bulleted_rounded,
                     size: 18,
                     color: ColorsManager.searchIconColor,
                   )),
             ],
           )),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 15,
             ),
@@ -110,7 +110,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                 options: CarouselOptions(
                   viewportFraction: 0.8,
                   enlargeCenterPage: true,
-                  height: 200,
+                  height: 170,
                   enableInfiniteScroll: false,
                   onPageChanged: (index, reason) {
                     setState(() {
@@ -126,7 +126,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                     width: 8,
                     height: 8,
                     margin:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                        const EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: currentIndex == index
@@ -140,25 +140,25 @@ class _MobileLayoutState extends State<MobileLayout> {
           )),
           SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(14.0),
               child: SizedBox(height: 150, child: CategoriesList()),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(14.0),
               child: SizedBox(height: 210, child: BestSellingList()),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(14.0),
               child: SizedBox(height: 210, child: NewArrivalList()),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(14.0),
               child: SizedBox(height: 210, child: RecommendedList()),
             ),
           )

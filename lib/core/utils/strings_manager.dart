@@ -9,4 +9,5 @@ class StringsManager{
   static const String favoritesTab = "Favorites";
   static const String cartTab = "Cart";
   static const String profileTab = "Profile";
+  static const String seeMore = "See More";
 }

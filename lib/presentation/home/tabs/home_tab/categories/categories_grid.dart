@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:slash_task/core/utils/strings_manager.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/categories/categories.dart';
+import '../../../../../core/reusable_component/see_more_widget.dart';
 import '../../../../../data/models/category_model.dart';
 
 class CategoriesGrid extends StatelessWidget {
@@ -12,7 +13,13 @@ class CategoriesGrid extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(StringsManager.categoriesTitle,style: Theme.of(context).textTheme.headlineLarge,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(StringsManager.categoriesTitle,style: Theme.of(context).textTheme.headlineLarge,),
+            const SeeMoreWidget()
+          ],
+        ),
         const SizedBox(height: 10,),
         Expanded(
           child: GridView.builder(

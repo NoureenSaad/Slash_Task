@@ -4,7 +4,7 @@ import 'package:slash_task/presentation/home/tabs/cart_tab/cart_tab.dart';
 import 'package:slash_task/presentation/home/tabs/favorites_tab/favorites_tab.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/home_tab.dart';
 import 'package:slash_task/presentation/home/tabs/profile_tab/profile_tab.dart';
-import 'package:slash_task/presentation/home/tabs/tab_widget.dart';
+import 'package:slash_task/core/reusable_component/tab_widget.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});

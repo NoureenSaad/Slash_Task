@@ -5,6 +5,8 @@ import 'package:slash_task/core/reusable_component/product_widget.dart';
 import 'package:slash_task/core/utils/strings_manager.dart';
 import 'package:slash_task/presentation/home/tabs/home_tab/recommended/view_model/recommended_cubit.dart';
 
+import '../../../../../../core/reusable_component/see_more_widget.dart';
+
 class RecommendedGrid extends StatelessWidget {
   const RecommendedGrid({super.key});
 
@@ -13,7 +15,13 @@ class RecommendedGrid extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(StringsManager.recommendedTitle,style: Theme.of(context).textTheme.headlineLarge,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(StringsManager.recommendedTitle,style: Theme.of(context).textTheme.headlineLarge,),
+            const SeeMoreWidget()
+          ],
+        ),
         const SizedBox(height: 10,),
         BlocProvider(
           create: (context)=>getIt<RecommendedCubit>()..getRecommended(),
